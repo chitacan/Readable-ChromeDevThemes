@@ -6,13 +6,6 @@
     }
 }
 
-#console-messages {
-  .console-group-messages .section .header::before, .properties-tree li.parent::before {
-    content: url(chrome-devtools://devtools/Images/treeRightTriangleBlack.png) !important;
-    }
-  .console-group-messages .section.expanded .header::before, .properties-tree li.parent.expanded::before {
-    content: url(chrome-devtools://devtools/Images/treeDownTriangleBlack.png) !important; } }
-
 #elements-content {
   * { }
   .parent, .parent * {
@@ -42,13 +35,9 @@
     &::before {
       position: relative;
       z-index: 999;
-      content: url(chrome-devtools://devtools/Images/treeRightTriangleBlack.png) !important;
     }
     &.expande {
       background: #f1f1f1;
-    }
-    &.expanded::before {
-      content: url(chrome-devtools://devtools/Images/treeDownTriangleBlack.png) !important;
     }
     &.selected {
       border-left: 1px solid #000;
