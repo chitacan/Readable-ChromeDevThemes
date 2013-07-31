@@ -1,282 +1,216 @@
 /*------------------------------------------------
-
 How to Install 怎麼安裝
 1. Download Custom.css
 2. Replace the Custom.css file in your "User Stylesheets" folder. Here is how to find Custom.css:
 
-Windows:
-%LOCALAPPDATA%\Google\Chrome\User Data\Default\User StyleSheets\Custom.css
+- Windows
+    %LOCALAPPDATA\Google\Chrome\User Data\Default\User StyleSheets\Custom.css
+- Linux
+    ~/.config/chromium/Default/User StyleSheets/Custom.css
+- Mac
+    ~/Library/Application Support/Google/Chrome/Default/User StyleSheets/Custom.css
 
-Linux:
-~/.config/chromium/Default/User StyleSheets/Custom.css
+--------------------------------------------------
+How to bulid your themes 如何製作自己的Themes
 
-Mac:
-~/Library/Application Support/Google/Chrome/Default/User StyleSheets/Custom.css
 
 ------------------------------------------------*/
-
-/*	Inspect Triangle Style
-------------------------------------------------*/
-#console-messages .console-group-messages .section .header::before,
-#console-messages .properties-tree li.parent::before
-{
-	content: url(chrome-devtools://devtools/Images/treeRightTriangleBlack.png) !important;
+/* line 2, ../sass/_inspect.scss */
+#-webkit-web-inspector .source-code, #-webkit-web-inspector #main-panels .split-view-sidebar-right *, #-webkit-web-inspector #console-message, #-webkit-web-inspector .text-editor-contents, #-webkit-web-inspector #console-view * {
+  font-size: 12px !important;
+  font-family: Menlo, "Consolas", monospace !important;
+  line-height: 1.2em !important;
 }
 
-#console-messages .console-group-messages .section.expanded .header::before,
-#console-messages .properties-tree li.parent.expanded::before
-{
-	content: url(chrome-devtools://devtools/Images/treeDownTriangleBlack.png) !important;
+/* line 11, ../sass/_inspect.scss */
+#elements-content .parent, #elements-content .parent * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: background 150ms cubic-bezier(0.47, 0, 0.745, 0.715);
+  -moz-transition: background 150ms cubic-bezier(0.47, 0, 0.745, 0.715);
+  -ms-transition: background 150ms cubic-bezier(0.47, 0, 0.745, 0.715);
+  -o-transition: background 150ms cubic-bezier(0.47, 0, 0.745, 0.715);
+  transition: background 150ms cubic-bezier(0.47, 0, 0.745, 0.715);
+  -webkit-transition-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+  -moz-transition-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+  -ms-transition-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+  -o-transition-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+  transition-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
 }
-
-/*	Globe Typography
-------------------------------------------------*/
-#-webkit-web-inspector .source-code,
-#-webkit-web-inspector #main-panels .split-view-sidebar-right *,
-#-webkit-web-inspector #console-message,
-#-webkit-web-inspector .text-editor-contents,
-#-webkit-web-inspector #console-view * {
-	font-size: 10px !important;
-	line-height: 1.2em !important;
-	font-family: Menlo, "Consolas", monospace !important;
-}
-
-/*	Html inspect area
-------------------------------------------------*/
-#elements-content * {
-
-}
-
-/* animation settings */
-#elements-content .parent,
-#elements-content .parent * {
-	-webkit-box-sizing: border-box;
-	   -moz-box-sizing: border-box;
-	        box-sizing: border-box;
-
-	-webkit-transition: background 150ms cubic-bezier(0.470, 0.000, 0.745, 0.715);
-	   -moz-transition: background 150ms cubic-bezier(0.470, 0.000, 0.745, 0.715);
-	    -ms-transition: background 150ms cubic-bezier(0.470, 0.000, 0.745, 0.715);
-	     -o-transition: background 150ms cubic-bezier(0.470, 0.000, 0.745, 0.715);
-	        transition: background 150ms cubic-bezier(0.470, 0.000, 0.745, 0.715); /* easeInSine */
-
-	-webkit-transition-timing-function: cubic-bezier(0.470, 0.000, 0.745, 0.715);
-	   -moz-transition-timing-function: cubic-bezier(0.470, 0.000, 0.745, 0.715);
-	    -ms-transition-timing-function: cubic-bezier(0.470, 0.000, 0.745, 0.715);
-	     -o-transition-timing-function: cubic-bezier(0.470, 0.000, 0.745, 0.715);
-	        transition-timing-function: cubic-bezier(0.470, 0.000, 0.745, 0.715); /* easeInSine */
-}
-
-/* style of line */
+/* line 30, ../sass/_inspect.scss */
 #elements-content.source-code {
-	background: #fcfcfc !important;
+  background: #fcfcfc !important;
 }
-
+/* line 33, ../sass/_inspect.scss */
 #elements-content .parent {
-	border: 1px solid transparent;
+  border: 1px solid transparent;
 }
-
+/* line 35, ../sass/_inspect.scss */
 #elements-content .parent::before {
-	content: url(chrome-devtools://devtools/Images/treeRightTriangleBlack.png) !important;
-	position: relative;
-	z-index: 999;
+  position: relative;
+  z-index: 999;
 }
-
-/* expand style */
+/* line 39, ../sass/_inspect.scss */
 #elements-content .parent.expande {
-	background: #f1f1f1;
+  background: #f1f1f1;
 }
-
-#elements-content .parent.expanded::before {
-	content: url(chrome-devtools://devtools/Images/treeDownTriangleBlack.png) !important;
-}
-
-/* select style */
+/* line 42, ../sass/_inspect.scss */
 #elements-content .parent.selected {
-	background: #D0F3F3;
-	border-left: 1px solid #000;
-	border-radius: 3px;
+  border-left: 1px solid #000;
+  border-radius: 3px;
+  background: #D0F3F3;
 }
-
+/* line 49, ../sass/_inspect.scss */
 #elements-content .highlight {
   color: #d4d4d4;
 }
 
-/* current select line style */
+/* line 54, ../sass/_inspect.scss */
 #-webkit-web-inspector .elements .selected {
-	background: #FAD165 !important;
-	border: 1px solid #aaa;
+  border: 1px solid #aaaaaa;
+  background: #fad165 !important;
 }
 
 /* wrap expanded style */
-#elements-content .parent.selected + *.expanded
-{
-	background: #f1f1f1 !important;
-	border-left: 1px dashed #aaa;
-	border-bottom: 1px dashed #aaa;
-	border-right: 1px dashed #aaa;
-	border-radius: 0 0 3px 3px;
-	margin-bottom: 10px !important;
+/* line 60, ../sass/_inspect.scss */
+#elements-content .parent.selected + *.expanded {
+  margin-bottom: 10px !important;
+  border-right: 1px dashed #aaaaaa;
+  border-bottom: 1px dashed #aaaaaa;
+  border-left: 1px dashed #aaaaaa;
+  border-radius: 0 0 3px 3px;
+  background: #f1f1f1 !important;
 }
 
-/*	------------------------------------------------
- *	End of Html inspect area /
-
-
-/*	CSS Inspect
-------------------------------------------------*/
+/* line 69, ../sass/_inspect.scss */
 .webkit-css-selector {
-	color: #BD3E4D !important;
+  color: #bd3e4d !important;
 }
 
-.webkit-css-comment {
-	color: #4DA95F !important;
-	font-style: italic !important;
-	line-height: 1.6em !important;
-}
-
-.webkit-css-url, .webkit-css-color, .webkit-css-string, .webkit-css-keyword,
-.webkit-css-selector {
-    color: #389 !important;
-}
-
-.webkit-css-number {
-    color: #3F8EBB !important;
-}
-
-.webkit-css-important {
-	color: #0000FF !important;
-}
-
-.webkit-css-property,
-.webkit-css-at-rule {
-	color: #C84252 !important;
-}
-
+/* line 73, ../sass/_inspect.scss */
 #-webkit-web-inspector .selector-matches {
-	color: #333 !important;
-	font-weight: bold;
-	background: #FAD165 !important;
+  background: #fad165 !important;
+  color: #333333 !important;
+  font-weight: bold;
 }
 
-/*	Inspect HTML style
-------------------------------------------------*/
+/* line 1, ../sass/_css.scss */
+.webkit-css-comment {
+  color: #4da95f !important;
+  font-style: italic !important;
+  line-height: 1.2em !important;
+}
+
+/* line 7, ../sass/_css.scss */
+.webkit-css-url {
+  color: #338899;
+}
+
+/* line 11, ../sass/_css.scss */
+.webkit-css-color, .webkit-css-string, .webkit-css-keyword, .webkit-css-selector {
+  color: #338899 !important;
+}
+
+/* line 15, ../sass/_css.scss */
+.webkit-css-number {
+  color: #3f8ebb !important;
+}
+
+/* line 19, ../sass/_css.scss */
+.webkit-css-important {
+  color: blue !important;
+}
+
+/* line 23, ../sass/_css.scss */
+.webkit-css-property, .webkit-css-at-rule {
+  color: #c84252 !important;
+}
+
+/* line 1, ../sass/_html.scss */
 .webkit-html-comment {
-	color: #4DA95F !important;
-	font-style: italic !important;
+  color: #4da95f !important;
+  font-style: italic !important;
 }
 
-.webkit-html-tag,
-.webkit-html-doctype {
-	color: #6B4E32 !important;
+/* line 5, ../sass/_html.scss */
+.webkit-html-tag, .webkit-html-doctype {
+  color: #6b4e32 !important;
 }
 
-.webkit-html-text-node,
-.webkit-html-css-node,
-.webkit-html-js-node {
-	color: #333 !important;
+/* line 8, ../sass/_html.scss */
+.webkit-html-text-node, .webkit-html-css-node, .webkit-html-js-node {
+  color: #333333 !important;
 }
+
+/* line 11, ../sass/_html.scss */
 .webkit-html-attribute-name {
-	color: #BD3E4D !important;
+  color: #bd3e4d !important;
 }
 
+/* line 14, ../sass/_html.scss */
 .webkit-html-attribute-value {
-	color: #0049B8 !important;
+  color: #0049b8 !important;
 }
 
-/*	JavaScript Style
-------------------------------------------------*/
-[class^="webkit-javascript"] {
-
-}
-
+/* line 3, ../sass/_javascript.scss */
 .webkit-javascript-string {
-	color: #3F8EBB !important;
+  color: #333333 !important;
 }
 
+/* line 6, ../sass/_javascript.scss */
 .webkit-javascript-comment {
-	color: #4DA95F !important;
-	font-style: italic !important;
-	line-height: 1.6em !important;
+  font-style: italic !important;
+  color: #4da95f !important;
 }
 
+/* line 10, ../sass/_javascript.scss */
 .webkit-javascript-number {
-    color: #429694 !important;
+  color: #429694 !important;
 }
 
+/* line 13, ../sass/_javascript.scss */
 .webkit-javascript-ident {
-	color: #333 !important;
+  color: #333333 !important;
 }
 
+/* line 16, ../sass/_javascript.scss */
 .webkit-javascript-keyword {
-	color: #C84252 !important;
+  color: #c84252 !important;
 }
 
-/*	Console Style
-------------------------------------------------*/
+/* line 2, ../sass/_console.scss */
 #-webkit-web-inspector .console-user-command > .console-message-text {
-	color: #333 !important;
+  color: #333333 !important;
 }
-
+/* line 5, ../sass/_console.scss */
 #-webkit-web-inspector #console-messages a {
-	color: #389 !important;
+  color: #338899 !important;
 }
-
+/* line 6, ../sass/_console.scss */
 #-webkit-web-inspector #console-messages a:hover {
-	color: blue !important;
+  color: blue !important;
 }
-
+/* line 11, ../sass/_console.scss */
 #-webkit-web-inspector .console-formatted-boolean {
-	color: #CC6600 !important;
+  color: #cc6600 !important;
 }
-
-#-webkit-web-inspector .console-error-level .console-message-text,
-#-webkit-web-inspector .console-error-level .section .header .title {
-
-}
-
-#-webkit-web-inspector .console-error-level .children .source-code {
-
-}
-
+/* line 16, ../sass/_console.scss */
 #-webkit-web-inspector .console-error-level .properties-tree {
-	font-weight: normal !important;
+  font-weight: normal !important;
 }
-
-#-webkit-web-inspector .console-message,
-#-webkit-web-inspector .console-user-command {
-	border: 0px !important;
-	border-bottom:1px dashed #ddd !important;
-	padding: 3px 0 !important;
-	line-height: 1.2em !important;
+/* line 20, ../sass/_console.scss */
+#-webkit-web-inspector .console-message, #-webkit-web-inspector .console-user-command {
+  padding: 3px 0 !important;
+  border: 0px !important;
+  border-bottom: 1px dashed #dddddd !important;
+  line-height: 1.2em !important;
 }
-
-#-webkit-web-inspector .console-message {
-}
-
-#-webkit-web-inspector .console .console-formatted-object {
-}
-
+/* line 29, ../sass/_console.scss */
 #-webkit-web-inspector .console .console-formatted-string {
-	color: #007cbb !important;
+  color: #007cbb !important;
 }
-
+/* line 32, ../sass/_console.scss */
 #-webkit-web-inspector .console .name {
-	color: #BD3E4D !important;
+  color: #bd3e4d !important;
 }
-
-
-/*  Source Code - Pane
-------------------------------------------------*/
-
-/* Generic */
-
-#-webkit-web-inspector #main-panels .pane > .title,
-#-webkit-web-inspector #main-panels .sidebar-separator,
-#-webkit-web-inspector #main-panels .sidebar-pane-subtitle {
-
-}
-
-#-webkit-web-inspector .split-view-sidebar-right .webkit-css-property {
-}
-
